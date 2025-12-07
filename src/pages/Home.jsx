@@ -3,8 +3,12 @@ import Navbar from '../component/Navbar';
 
 const Home = () => {
     return (
-        <div>
+        <div >
             <Navbar></Navbar>
+            <div className='h-16'>
+
+            </div>
+            <h2>HomePage</h2>
         </div>
     );
 };
