@@ -1,4 +1,6 @@
 import React, { useEffect, useState } from 'react';
+import { Link, NavLink } from 'react-router';
+import './Navbar.css'
 
 const Navbar = () => {
 
@@ -26,11 +28,16 @@ const Navbar = () => {
             <div className="flex-1">
                 <a className="btn btn-ghost gap-0 text-2xl"><span className='text-pink-500 font-bold'>Byte</span><span className='text-blue-600 font-bold'>Blaze</span></a>
             </div>
-            <div className="flex-none">
-                <ul className="menu menu-horizontal px-1">
-                    <li><a className='font-bold'>Home</a></li>
-                    <li><a className='font-bold'>Blogs</a></li>
-                    <li><a className='font-bold'>Bookmarks</a></li>
+            <div className="flex-none flex items-center gap-4">
+                <ul className="menu menu-horizontal px-1 hidden sm:flex gap-5">
+                    <NavLink to='/' className={({ isActive }) => isActive ? "text-primary font-bold" : "font-bold"
+                    }>Home</NavLink>
+
+                    <NavLink to='/blogs' className={({ isActive }) => isActive ? "text-primary font-bold" : "font-bold"
+                    }>Blogs</NavLink>
+
+                    <NavLink to='/bookmarks' className={({ isActive }) => isActive ? "text-primary font-bold" : "font-bold"
+                    }>Bookmarks</NavLink>
 
                 </ul>
 
