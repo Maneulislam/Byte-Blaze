@@ -8,6 +8,8 @@ import Blogs from './pages/Blogs.jsx';
 import Bookmark from './pages/Bookmark.jsx';
 import MainLayout from './MainLayout/MainLayout.jsx';
 import Blog from './pages/Blog.jsx';
+import Content from './component/Content.jsx';
+import Author from './component/Author.jsx';
 
 
 const router = createBrowserRouter([
@@ -16,13 +18,32 @@ const router = createBrowserRouter([
     Component: MainLayout,
 
     children: [
-      { index: true, Component: Home },
+      {
+        index: true,
+        Component: Home
+      },
 
-      { path: "/blogs", Component: Blogs, loader: () => fetch('https://dev.to/api/articles?per_page=20&top=7') },
+      {
+        path: "/blogs",
+        Component: Blogs,
+        loader: () => fetch('https://dev.to/api/articles?per_page=20&top=7')
+      },
 
-      { path: "/blog/:id", Component: Blog, loader: ({ params }) => fetch(`https://dev.to/api/articles/${params.id}`) },
+      {
+        path: "/blog/:id",
+        Component: Blog,
+        loader: ({ params }) => fetch(`https://dev.to/api/articles/${params.id}`),
+        children: [
+          { index: true, Component: Content, loader: ({ params }) => fetch(`https://dev.to/api/articles/${params.id}`), },
+          { path: "author", Component: Author, loader: ({ params }) => fetch(`https://dev.to/api/articles/${params.id}`), },
+        ]
 
-      { path: "/bookmarks", Component: Bookmark },
+      },
+
+      {
+        path: "/bookmarks",
+        Component: Bookmark
+      },
 
 
 
