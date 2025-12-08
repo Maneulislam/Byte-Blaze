@@ -8,7 +8,7 @@ const Content = () => {
 
     const blog = useLoaderData();
 
-    const { title, reading_time_minutes, comments_count, published_at, cover_image, public_reactions_count, tags, body_html } = blog;
+    const { title, cover_image, tags, body_html } = blog;
 
     return (
         <div rel="noopener noreferrer" href="#" className=" border-2 border-primary-50 p-3 hover:border-secondary  mx-auto group hover:no-underline focus:no-underline bg-gray-900 dark:bg-gray-50">
@@ -18,7 +18,7 @@ const Content = () => {
 
                 {
                     tags.map(tag =>
-                        <a rel="noopener noreferrer" href="#" className="px-3 py-1 rounded-sm hover:underline bg-gray-200 text-gray-900">#{tag}</a>
+                        <a key={tag} rel="noopener noreferrer" href="#" className="px-3 py-1 rounded-sm hover:underline bg-gray-200 text-gray-900">#{tag}</a>
                     )
                 }
 

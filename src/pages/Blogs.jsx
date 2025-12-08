@@ -2,6 +2,8 @@ import React from 'react';
 import { useLoaderData, useNavigation } from 'react-router';
 import BlogCard from '../component/BlogCard';
 import Loader from '../component/Loader';
+import { MdBookmarkAdd } from "react-icons/md";
+
 
 const Blogs = () => {
 
@@ -13,7 +15,7 @@ const Blogs = () => {
         return <Loader></Loader>
 
     return (
-        <section className="bg-gray-800 dark:bg-gray-100 text-gray-100 dark:text-gray-800">
+        <section className="mt-8">
             <div className="container max-w-6xl p-6 mx-auto space-y-6 sm:space-y-12">
                 <a rel="noopener noreferrer" href="#" className="block max-w-sm gap-3 mx-auto sm:max-w-full group hover:no-underline focus:no-underline lg:grid lg:grid-cols-12 bg-gray-900 dark:bg-gray-50">
                     <img src={blogs[0].cover_image} alt="" className="object-cover w-full h-64 rounded sm:h-96 lg:col-span-7 bg-gray-500 dark:bg-gray-500" />
