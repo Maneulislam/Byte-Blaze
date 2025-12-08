@@ -24,7 +24,7 @@ const Navbar = () => {
 
 
     return (
-        <div className="navbar bg-base-100 shadow-xl px-5 fixed z-10 ">
+        <div className="navbar bg-base-100 shadow-xl px-8 fixed z-10 ">
             <div className="flex-1">
                 <a className="btn btn-ghost gap-0 text-2xl"><span className='text-pink-500 font-bold'>Byte</span><span className='text-blue-600 font-bold'>Blaze</span></a>
             </div>

@@ -16,7 +16,9 @@ const router = createBrowserRouter([
 
     children: [
       { index: true, Component: Home },
-      { path: "/blogs", Component: Blogs },
+
+      { path: "/blogs", Component: Blogs, loader: () => fetch('https://dev.to/api/articles?per_page=20&top=7') },
+
       { path: "/bookmarks", Component: Bookmark },
     ],
 

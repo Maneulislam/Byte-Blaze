@@ -3,7 +3,7 @@ import { NavLink } from 'react-router';
 
 const Hero = () => {
     return (
-        <div className="hero bg-base-200 min-h-[calc(100vh-116px)] ">
+        <div className="hero  min-h-[calc(100vh-116px)] ">
             <div className="hero-content text-center -mt-16">
                 <div className="max-w-lg">
                     <h1 className="text-4xl font-bold ">Welcome to <span className='bg-gradient-to-r from-orange-700 via-blue-500 to-green-400 text-transparent bg-clip-text animate-gradient'>Byte</span><span className='bg-gradient-to-r from-orange-700 via-blue-500 to-green-400 text-transparent bg-clip-text animate-gradient'>Blaze</span>
