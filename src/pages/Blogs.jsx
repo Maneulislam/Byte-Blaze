@@ -1,6 +1,6 @@
 import React from 'react';
 import { useLoaderData } from 'react-router';
-import Blog from '../component/Blog';
+import BlogCard from '../component/BlogCard';
 
 const Blogs = () => {
 
@@ -19,7 +19,7 @@ const Blogs = () => {
                 </a>
                 <div className="grid justify-center grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3">
                     {
-                        blogs.map(blog => <Blog blog={blog} key={blog.id}></Blog>)
+                        blogs.map(blog => <BlogCard blog={blog} key={blog.id}></BlogCard>)
                     }
 
                 </div>

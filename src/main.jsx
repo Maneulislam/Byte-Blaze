@@ -7,6 +7,7 @@ import Home from './pages/Home.jsx';
 import Blogs from './pages/Blogs.jsx';
 import Bookmark from './pages/Bookmark.jsx';
 import MainLayout from './MainLayout/MainLayout.jsx';
+import Blog from './pages/Blog.jsx';
 
 
 const router = createBrowserRouter([
@@ -19,7 +20,12 @@ const router = createBrowserRouter([
 
       { path: "/blogs", Component: Blogs, loader: () => fetch('https://dev.to/api/articles?per_page=20&top=7') },
 
+      { path: "/blog/:id", Component: Blog, loader: ({ params }) => fetch(`https://dev.to/api/articles/${params.id}`) },
+
       { path: "/bookmarks", Component: Bookmark },
+
+
+
     ],
 
   },
