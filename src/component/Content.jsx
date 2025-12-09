@@ -1,5 +1,5 @@
 import React from 'react';
-import { useLoaderData } from 'react-router';
+import { Link, useLoaderData } from 'react-router';
 import svg from '../assets/404.jpg'
 import Markdown from 'react-markdown';
 import rehypeRaw from 'rehype-raw';
@@ -8,7 +8,7 @@ const Content = () => {
 
     const blog = useLoaderData();
 
-    const { title, cover_image, tags, body_html } = blog;
+    const { title, cover_image, tags, body_html, url } = blog;
 
     return (
         <div rel="noopener noreferrer" href="#" className=" border-2 border-primary-50 p-3 hover:border-secondary  mx-auto group hover:no-underline focus:no-underline bg-gray-900 dark:bg-gray-50">
@@ -26,7 +26,7 @@ const Content = () => {
 
 
             <div className=" space-y-2">
-                <h3 className="text-2xl font-semibold group-hover:underline group-focus:underline">{title.slice(0, 45)}</h3>
+                <Link target='_blank' to={url} className="text-2xl font-semibold group-hover:underline group-focus:underline">{title.slice(0, 45)}</Link>
 
             </div>
 

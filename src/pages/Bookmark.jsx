@@ -2,8 +2,12 @@ import React, { useEffect, useState } from 'react';
 import BlogCard from '../component/BlogCard';
 import { deleteBlog, getBlog } from '../utilities';
 import Empty from '../component/Empty';
+import { useNavigation } from 'react-router';
+import Loader from '../component/Loader';
 
 const Bookmark = () => {
+
+    const navigation = useNavigation();
 
     const [blogs, setBlogs] = useState([]);
 
@@ -20,6 +24,9 @@ const Bookmark = () => {
         setBlogs(storedBlogs);
     }
 
+
+    if (navigation.state === 'loading')
+        return <Loader></Loader>
 
 
     if (blogs.length === 0) return <Empty address={'/blogs'} message="No bookmarks Found" label={"Browse Blogs"}></Empty >
