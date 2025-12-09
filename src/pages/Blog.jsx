@@ -15,7 +15,7 @@ const Blog = () => {
 
 
     const handleBookmark = (blog) => {
-        saveBlog(blog)
+        saveBlog(blog);
     }
 
 
