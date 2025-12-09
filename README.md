@@ -1,2 +1,2 @@
 Live Link:
-https://byteblazedev.netlify.app/
+https://byteblazeblogwebsite.netlify.app/
